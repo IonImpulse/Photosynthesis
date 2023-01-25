@@ -18,8 +18,16 @@ nb_classes = len(class_names)
 IMAGE_SIZE = (150, 150)
 
 def load_data():
+    # Relative path to the data directory
     DIRECTORY = "train"
-    CATEGORY = {"train", "test"}
+
+    # Enumerate through each folder, with the folder
+    # name being one of the catagories
+    CATEGORY = []
+
+    # Iterate through each folder in the directory
+    for folder in os.listdir(DIRECTORY):
+        CATEGORY.append(str(folder))
 
     output = []
 
@@ -47,6 +55,7 @@ def load_data():
                 #Append the image and its corresponding label to the output
                 images.append(image)
                 label.append(label)
+                
     images = np.array(images, dtype = 'float32')
     labels = np.array(labels, dtype = 'int32')
 

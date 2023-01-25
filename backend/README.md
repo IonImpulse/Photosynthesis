@@ -1,5 +1,5 @@
 TODO: 
-- [ ] Get training set of trees and their leaves
+- [X] Get training set of trees and their leaves
 - [ ] Build an AI model to predict the tree name from the leaves
 - [ ] Train the model a lot
 - [ ] Optimize??
