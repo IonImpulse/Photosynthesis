@@ -10,7 +10,16 @@ import cv2
 import tensorflow as tf
 from tqdm import tqdm
 ##making class names 
-class_names = ['']
+class_names = ['Acer palmatum', 'aesculus chinesis', 'Albizia julibrissin', 'Aucuba japonica var. variegata', 'Buxus sinica var. parvifolia', 
+'Camptotheca acuminata', 'Cedrus deodara', 'Celtis sinensis', 'cinnamomum camphora (Linn) Presl', 'Elaeocarpus decipiens'
+'Euonymus japonicus', 'Euoynmus japonicus Aureo_marginatus', 'Flowering cherry', 'Ginkgo biloba', 'Juniperus cinensis Kaizuca'
+'Koelreuteria paniculata', 'Lagerstroemia indica', 'Ligustrum lucidum', 'Liquidambar formosana', 'Liriodendron chinense',
+'Llex cornuta', 'Loropetalum chinense var. rubrum', 'Magnolia grandiflora L', 'Magnolia liliflora Desr', 'Malushaliana',
+'Metasequoia glyptostroboides', 'Michelia chapensis', 'Michelia figo (Lour.) Spreng', 'Nandina domestica', 'Nerium oleander L',
+'Osmanthus fragrans', 'Photinia serratifolia', 'Pinus massoniana Lamb', 'Pinus parviflora', 'Pittosporum tobira',
+'Platanus', 'Platycladus orietalis Beverlevensis', 'Pordocarpus macrophyllus', 'Populus L','Prunus cerasifera f. atropurpurea',
+'Prunus persica', 'Rhododendron pulchrum', 'Sabina chinensis cv. Pyramidalis', 'Salix babylonica', 'Sapindus saponaria',
+'Styphnolobium japonicum', 'Taxodium ascendens Brongn', 'Triadica sebifera', 'Viburnum odoratissimum', 'Zelkova serrata']
 class_names_label = {class_name:i for i, class_name in enumerate(class_names)}
 
 nb_classes = len(class_names)
