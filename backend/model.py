@@ -28,7 +28,7 @@ IMAGE_SIZE = (150, 150)
 
 def load_data():
     # Relative path to the data directory
-    DIRECTORY = "train"
+    DIRECTORY = "../train"
 
     # Enumerate through each folder, with the folder
     # name being one of the catagories
@@ -41,33 +41,33 @@ def load_data():
     output = []
 
     for category in CATEGORY:
-        path = os.pat.join(DIRECTORY, category)
+        path = os.path.join(DIRECTORY, category)
         images = []
         labels = []
 
         print("Loading {}".format(category))
 
-        for folder in os.listdir(path):
-            label = class_names_label[folder]
+        #Iterate through each image in our folder
+        for file in os.listdir(path):
 
-            #Iterate through each image in our folder
-            for file in os.listdir(os.path.join(path, folder)):
+            #Get the path name of the image
+            img_path = os.path.join(path, file)
 
-                #Get the path name of the image
-                img_path = os.path.join(os.path.join(path, folder), file)
+            #Open and resize the img
+            image = cv2.imread(img_path)
+            image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+            image = cv2.resize(image, IMAGE_SIZE)
 
-                #Open and resize the img
-                image = cv2.imread(img_path)
-                image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-                image = cv2.resize(image, IMAGE_SIZE)
-
-                #Append the image and its corresponding label to the output
-                images.append(image)
-                label.append(label)
-                
+            #Append the image and its corresponding label to the output
+            images.append(image)
+            labels.append(category)
+            
     images = np.array(images, dtype = 'float32')
     labels = np.array(labels, dtype = 'int32')
 
     output.append((images, labels))
 
     return output
+
+if __name__ == "__main__":
+    load_data()
