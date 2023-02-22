@@ -70,4 +70,5 @@ def load_data():
     return output
 
 if __name__ == "__main__":
-    load_data()
+    (train_images, train_labels), (test_images, test_labels) = load_data()
+    train_images, train_labels = shuffle(train_images, train_labels, random_state = 25)
